@@ -7,8 +7,9 @@
 <title>CodePen - 1902-3</title>
 <style>
     span {
-  color:#ffffff;
+  color:#FFFFFF;
 }
+
 div{
   background:#CCCCCC;
 }
@@ -16,26 +17,39 @@ div{
 </head>
 <body translate="no">
 <div>
-<button id="playMe">PlayMe</button>
+<button id="playMe">Play Me</button>
 <button id="playFast">Play Fast</button>
+<button id="playFromMiddle">Play From Middle</button>
 </div>
-<video width="400" id="myVid" height="240" controls>
-<source src="https://github.com/rubydesai/1902-3/raw/master/video%20for%20software.html" type="video/mp4">
-<source src="movie.ogg" type="video/ogg">
-Your browser does not support the video tag.
+<video width="400" id="myVideo" controls>
+<source src="https://github.com/seattleacademy/1902-3/raw/master/video/myvideo.mp4" type="video/mp4">
+Your browser does not support HTML5 video.
 </video>
 <div>Hello <span>World</span></div>
 <script id="rendered-js">
       console.clear();
-year x=5;
-console.log("hello world",x);
-document.getElementById("playMe").addEventListener("click", playMe);
+
+vid = document.getElementById("myVideo");
+document.getElementById("playMe").addEventListener("click",playMe);
+document.getElementById("playFast").addEventListener("click",playFast);
+document.getElementById("playFromMiddle").addEventListener("click",playFromMiddle);
 
 function playMe(e){
   console.log("Button Clicked");
-  var vid = document.getElementById("myVideo"); 
+  vid.playbackRate = .5;
+  vid.play();
 }
-vid=document.getElementById("anyVideo");
+
+function playFast(e){
+  vid.playbackRate = 2;
+  vid.play();
+}
+
+function playFromMiddle(e){
+  vid.currentTime = 5;
+  vid.play();
+}
     </script>
 </body>
 </html>
+

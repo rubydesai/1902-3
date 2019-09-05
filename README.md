@@ -15,11 +15,27 @@ div{
   </style>
 </head>
 <body translate="no">
+<div>
+<button id="playMe">PlayMe</button>
+<button id="playFast">Play Fast</button>
+</div>
+<video width="400" id="myVid" height="240" controls>
+<source src="https://github.com/rubydesai/1902-3/raw/master/video%20for%20software.html" type="video/mp4">
+<source src="movie.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video>
 <div>Hello <span>World</span></div>
 <script id="rendered-js">
       console.clear();
 year x=5;
 console.log("hello world",x);
+document.getElementById("playMe").addEventListener("click", playMe);
+
+function playMe(e){
+  console.log("Button Clicked");
+  var vid = document.getElementById("myVideo"); 
+}
+vid=document.getElementById("anyVideo");
     </script>
 </body>
 </html>
